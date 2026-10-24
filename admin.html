@@ -1,0 +1,27 @@
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>太平人大小事｜管理員後台</title><link rel="icon" type="image/png" sizes="128x128" href="assets/taiping-group-icon.png"><link rel="stylesheet" href="styles.css"></head>
+<body>
+<header class="hero"><div class="hero-inner"><div class="brand-mark">管理</div><div><div class="eyebrow">ADMIN CONSOLE v0.2.2</div><h1>太平人大小事｜管理員後台</h1><p>違規紀錄・房仲累計・社員檢舉・誤判申訴</p></div></div></header>
+<main class="container">
+  <div id="adminMode" class="mode-banner" hidden></div>
+  <section id="loginBox" class="auth-card">
+    <h2>🔐 管理員登入</h2><p class="muted">正式模式使用 Supabase Auth。只有列入 admin_users 的帳號能進入。</p>
+    <form id="loginForm" class="form-stack"><label>Email<input name="email" type="email" autocomplete="username" required></label><label>密碼<input name="password" type="password" autocomplete="current-password" required></label><button class="primary">登入後台</button></form>
+    <button id="demoEnter" class="secondary" hidden>進入展示後台</button><div id="loginMsg" class="result" hidden></div>
+  </section>
+
+  <section id="dashboard" hidden>
+    <div class="admin-topbar"><div><strong id="adminIdentity">管理員</strong><small id="dataMode"></small></div><button id="logoutBtn" class="secondary">登出</button></div>
+    <section class="stats" id="stats"></section>
+    <section class="grid menu-grid compact">
+      <button class="menu-card" data-tab="violations"><span class="emoji">🧾</span><strong>違規紀錄</strong><small>一般違規、處分與備註</small></button>
+      <button class="menu-card" data-tab="realtors"><span class="emoji">🏠</span><strong>房仲紀錄</strong><small>第一次 30 天／第二次移除封鎖</small></button>
+      <button class="menu-card" data-tab="reports"><span class="emoji">⚠️</span><strong>社員檢舉</strong><small>待處理、處理中、已完成</small></button>
+      <button class="menu-card" data-tab="appeals"><span class="emoji">🙋</span><strong>誤判申訴</strong><small>查看原文與處理結果</small></button>
+      <button class="menu-card" data-tab="templates"><span class="emoji">💬</span><strong>快速回覆</strong><small>一鍵複製常用管理訊息</small></button>
+      <a class="menu-card" href="index.html"><span class="emoji">↩️</span><strong>社員服務中心</strong><small>回前台</small></a>
+    </section>
+    <section class="panel active" id="adminPanel"></section>
+  </section>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="config.js"></script><script src="db.js"></script><script src="admin.js"></script>
+</body></html>

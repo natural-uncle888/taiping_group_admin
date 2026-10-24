@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>太平人大小事｜社員服務中心</title>
+  <meta name="description" content="太平人大小事社員服務中心：發文前自我檢查、無法發文原因、社團規則、檢舉與申訴。" />
+  <link rel="icon" type="image/png" sizes="128x128" href="assets/taiping-group-icon.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="brand-mark"><img src="assets/taiping-group-icon.webp" alt="太平人大小事社團照片" width="512" height="512" /></div>
+      <div>
+        <div class="eyebrow">TAIPING COMMUNITY</div>
+        <h1>太平人大小事</h1>
+        <p>社員服務中心｜在地交流・互助分享・讓太平更美好</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="notice-card">
+      <div class="notice-icon">📣</div>
+      <div>
+        <h2>文章無法發布？先不用私訊管理員</h2>
+        <p>請先使用下方工具自我檢查。私訊管理員不會加快審核，也不會因私人訊息而另外放行貼文。</p>
+      </div>
+    </section>
+
+    <div id="modeBanner" class="mode-banner" hidden></div>
+
+    <section class="grid menu-grid" aria-label="功能選單">
+      <button class="menu-card" data-open="checker"><span class="emoji">📝</span><strong>發文前自我檢查</strong><small>先確認是否符合社團規範</small></button>
+      <button class="menu-card" data-open="cantpost"><span class="emoji">❓</span><strong>為什麼無法 PO 文？</strong><small>依情況快速找可能原因</small></button>
+      <button class="menu-card" data-open="rules"><span class="emoji">📖</span><strong>社團規則</strong><small>查看 10 條正式規範</small></button>
+      <button class="menu-card" data-open="report"><span class="emoji">⚠️</span><strong>檢舉詐騙／違規</strong><small>建立事件紀錄供管理團隊處理</small></button>
+      <button class="menu-card" data-open="appeal"><span class="emoji">🙋</span><strong>貼文誤判申訴</strong><small>正常貼文被攔截時使用</small></button>
+      <a class="menu-card" href="admin.html"><span class="emoji">🔐</span><strong>管理員後台</strong><small>登入後查看紀錄與處理進度</small></a>
+    </section>
+
+    <section class="panel" id="checker">
+      <div class="panel-head"><h2>📝 發文前自我檢查</h2><button class="close" data-close>×</button></div>
+      <form id="checkerForm" class="form-stack">
+        <label>這篇文章主要類型？
+          <select name="type" required>
+            <option value="">請選擇</option><option value="general">一般生活／在地資訊</option><option value="ad">廣告／商品／服務</option><option value="realestate">房仲／不動產業者</option><option value="owner">屋主本人自售／自租</option><option value="dispute">消費糾紛／爆料</option><option value="search">協尋／失物／交通事件</option>
+          </select>
+        </label>
+        <label class="check"><input type="checkbox" name="ad24"> 24 小時內已發過另一篇廣告／商業貼文</label>
+        <label class="check"><input type="checkbox" name="personal"> 文章含電話、住址、證件、私人對話或其他個資</label>
+        <label class="check"><input type="checkbox" name="accuse"> 文章直接使用「詐騙、騙子、犯罪、黑店」等重大指控字眼</label>
+        <label class="check"><input type="checkbox" name="suspicious"> 文章涉及投資、貸款、先匯款、QR Code、不明連結、帳戶或驗證碼</label>
+        <button class="primary" type="submit">開始檢查</button>
+      </form>
+      <div id="checkerResult" class="result" hidden></div>
+    </section>
+
+    <section class="panel" id="cantpost">
+      <div class="panel-head"><h2>❓ 為什麼無法 PO 文？</h2><button class="close" data-close>×</button></div>
+      <p class="muted">社團使用 Facebook 管理員小幫手與自動審核。以下僅提供常見原因，不公開完整風控門檻。</p>
+      <div class="reason-list">
+        <details><summary>帳號較新或資料不完整</summary><p>系統可能將新建立、活動紀錄較少或資訊不完整的帳號列為較高風險。</p></details>
+        <details><summary>內容被判定為廣告或重複商業貼文</summary><p>商業／廣告貼文每個帳號 24 小時內限 1 篇。不同商品、服務或活動仍合併計算。</p></details>
+        <details><summary>內容含高風險字詞、連結或交易方式</summary><p>投資、貸款、先匯款、不明連結、QR Code、要求提供帳戶／驗證碼等，可能觸發額外審核。</p></details>
+        <details><summary>近期有違規或貼文被檢舉</summary><p>近期曾被處理、重複違規或收到多位社員檢舉的內容，可能被系統攔截或送管理團隊確認。</p></details>
+      </div>
+      <div class="soft-warning">如果你認為是誤判，請使用「貼文誤判申訴」；請勿私訊要求代發或催審。</div>
+    </section>
+
+    <section class="panel" id="rules"><div class="panel-head"><h2>📖 太平人大小事｜10 條社團規則</h2><button class="close" data-close>×</button></div><div id="rulesList" class="rules-list"></div></section>
+
+    <section class="panel" id="report">
+      <div class="panel-head"><h2>⚠️ 檢舉詐騙／違規</h2><button class="close" data-close>×</button></div>
+      <form id="reportForm" class="form-stack">
+        <div class="hp-field" aria-hidden="true"><label>請勿填寫<input name="website" tabindex="-1" autocomplete="off"></label></div>
+        <label>類型<select name="category" required><option value="">請選擇</option><option>疑似詐騙</option><option>廣告洗版</option><option>房仲違規</option><option>人身攻擊／公審</option><option>個資／肉搜</option><option>其他</option></select></label>
+        <label>被檢舉對象姓名或帳號<input name="target_name" placeholder="例如：王小明" required></label>
+        <label>Facebook 貼文／帳號連結<input name="facebook_url" placeholder="https://...（選填）"></label>
+        <label>事件說明<textarea name="detail" rows="5" placeholder="請簡要說明發生什麼事" required></textarea></label>
+        <label>你的聯絡方式（選填）<input name="reporter_contact" placeholder="Facebook 名稱、Email 或其他方便聯絡方式"></label>
+        <button class="primary" type="submit">送出檢舉</button>
+        <p class="tiny">送出後會取得案件編號。請勿重複送件或以此功能進行惡意檢舉。</p>
+      </form>
+      <div id="reportResult" class="result" hidden></div>
+    </section>
+
+    <section class="panel" id="appeal">
+      <div class="panel-head"><h2>🙋 貼文誤判申訴</h2><button class="close" data-close>×</button></div>
+      <form id="appealForm" class="form-stack">
+        <div class="hp-field" aria-hidden="true"><label>請勿填寫<input name="website" tabindex="-1" autocomplete="off"></label></div>
+        <label>姓名或 Facebook 顯示名稱<input name="display_name" required></label>
+        <label>文章類型<select name="post_type" required><option value="">請選擇</option><option>一般生活分享</option><option>廣告／商業貼文</option><option>房屋／租售</option><option>協尋／交通事件</option><option>其他</option></select></label>
+        <label>原貼文內容<textarea name="post_content" rows="6" required></textarea></label>
+        <label>申訴原因<textarea name="reason" rows="4" required></textarea></label>
+        <label>聯絡方式（選填）<input name="contact" placeholder="Facebook 名稱、Email 或其他方便聯絡方式"></label>
+        <button class="primary" type="submit">送出申訴</button>
+        <p class="tiny">申訴不代表一定通過；管理團隊仍依社團規則與實際內容判斷。</p>
+      </form>
+      <div id="appealResult" class="result" hidden></div>
+    </section>
+  </main>
+
+  <footer><strong>太平人大小事</strong><span>｜在地交流・互助分享・讓太平更美好</span></footer>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script><script src="db.js"></script><script src="app.js"></script>
+</body>
+</html>
