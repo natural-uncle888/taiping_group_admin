@@ -3,5 +3,5 @@
 // 注意：anon key 可以放前端；service_role key 絕對不要放在網站中。
 window.TP_CONFIG = {
   SUPABASE_URL: 'https://qdrkftpkxsjpsbouybtm.supabase.co',
-  SUPABASE_ANON_KEY: 'ddaa9978-9485-4cf1-b300-441e11eb5c10'
+  SUPABASE_ANON_KEY: 'sb_publishable_SGNUQWeN9iRaQo7FdHoDzw_wvOYQ2uo'
 };
